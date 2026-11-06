@@ -1,0 +1,189 @@
+{
+  "title": "Ship the project. Keep your options.",
+  "question": "Which delivery strategy fits the scope, deadline and budget?",
+  "description": "Illustrative project estimates. Explore how scope and deadline change the lowest-cost feasible delivery strategy.",
+  "assumptions": [
+    {
+      "id": "scope",
+      "label": "Project scope",
+      "unit": "units",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "kind": "estimate",
+      "source": {
+        "label": "Illustrative planning units"
+      }
+    },
+    {
+      "id": "deadline",
+      "label": "Time available",
+      "unit": "days",
+      "min": 4,
+      "max": 26,
+      "step": 0.5,
+      "default": 12,
+      "kind": "preference",
+      "source": {
+        "label": "Your target deadline"
+      }
+    },
+    {
+      "id": "budget",
+      "label": "Budget ceiling",
+      "unit": "USD",
+      "min": 1500,
+      "max": 6500,
+      "step": 50,
+      "default": 4500,
+      "kind": "preference",
+      "source": {
+        "label": "Your spending limit"
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "id": "cost",
+      "label": "Estimated cost",
+      "unit": "USD"
+    },
+    {
+      "id": "duration",
+      "label": "Delivery time",
+      "unit": "days"
+    },
+    {
+      "id": "time_left",
+      "label": "Deadline margin",
+      "unit": "days"
+    },
+    {
+      "id": "budget_left",
+      "label": "Budget remaining",
+      "unit": "USD"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "solo",
+      "label": "Solo sprint",
+      "description": "Do the work yourself. Low overhead, slower delivery.",
+      "metrics": {
+        "cost": {
+          "constant": 350,
+          "coefficients": {
+            "scope": 125
+          }
+        },
+        "duration": {
+          "constant": 2,
+          "coefficients": {
+            "scope": 0.7
+          }
+        },
+        "time_left": {
+          "constant": -2,
+          "coefficients": {
+            "deadline": 1,
+            "scope": -0.7
+          }
+        },
+        "budget_left": {
+          "constant": -350,
+          "coefficients": {
+            "budget": 1,
+            "scope": -125
+          }
+        }
+      }
+    },
+    {
+      "id": "specialist",
+      "label": "Specialist assist",
+      "description": "Bring in focused help. Faster work with a setup cost.",
+      "metrics": {
+        "cost": {
+          "constant": 1250,
+          "coefficients": {
+            "scope": 75
+          }
+        },
+        "duration": {
+          "constant": 2,
+          "coefficients": {
+            "scope": 0.4
+          }
+        },
+        "time_left": {
+          "constant": -2,
+          "coefficients": {
+            "deadline": 1,
+            "scope": -0.4
+          }
+        },
+        "budget_left": {
+          "constant": -1250,
+          "coefficients": {
+            "budget": 1,
+            "scope": -75
+          }
+        }
+      }
+    },
+    {
+      "id": "studio",
+      "label": "Studio build",
+      "description": "A parallel team. Higher overhead, shorter delivery.",
+      "metrics": {
+        "cost": {
+          "constant": 2600,
+          "coefficients": {
+            "scope": 45
+          }
+        },
+        "duration": {
+          "constant": 3,
+          "coefficients": {
+            "scope": 0.22
+          }
+        },
+        "time_left": {
+          "constant": -3,
+          "coefficients": {
+            "deadline": 1,
+            "scope": -0.22
+          }
+        },
+        "budget_left": {
+          "constant": -2600,
+          "coefficients": {
+            "budget": 1,
+            "scope": -45
+          }
+        }
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "id": "on_time",
+      "label": "Deliver by the deadline",
+      "metric_id": "time_left",
+      "operator": ">=",
+      "value": 0
+    },
+    {
+      "id": "in_budget",
+      "label": "Stay within budget",
+      "metric_id": "budget_left",
+      "operator": ">=",
+      "value": 0
+    }
+  ],
+  "objective": {
+    "metric_id": "cost",
+    "direction": "min"
+  }
+}

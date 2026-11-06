@@ -1,0 +1,25 @@
+{
+  "hermes_version": "0.23.0",
+  "hermes_commit": "2bd378ed1b8d6bf2192cb26e0a55ff3091e6bd19",
+  "tests_passed": 38,
+  "doctor": "pass:4tools,0hooks",
+  "validate": "pass: final UI 084178c4f30608f838d709c27bb97bd5b4949205c5e4a78dfc4b2f2017c3b2a0; security-safe,no-core-override,desktop-sdk-surface",
+  "sha256": {
+    "crux_engine.py": "fb603399dbee4dd56347c28d09daa58b4697134c544a0b2e1f2e3e24729a3bec",
+    "crux_store.py": "2fb5490e2c4fe75f5ed4fa9e723ded443fee6e852b09b8aa211ef19c550601bb",
+    "__init__.py": "c47ecc8a5b08d1f15d7fb1ae60c023f30aac03a9cb6e6be5181f99c9b3412b33",
+    "plugin.yaml": "a98632932e41fb4d7b88476d2afafdb84d0317567e1522bb3e48d7c855e89442",
+    "dashboard/plugin_api.py": "e0ce1078fc4182a1963c7ea453dafe801667c0d084fad20f5165be74f312b3ca",
+    "dashboard/manifest.json": "747e4c3daf2deb75d78de9c3300e3534701fdc8f390205c72184106303dd3c48",
+    "desktop/plugin.js": "084178c4f30608f838d709c27bb97bd5b4949205c5e4a78dfc4b2f2017c3b2a0",
+    "skills/decision-lab/SKILL.md": "f9f0b77665509e4f5e61d82301e66e922e1640953782c918187c59e026be2c3c"
+  },
+  "validated_at": "2026-11-06T05:02:22.438263+00:00",
+  "snapshot_excludes": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    "*.pyc",
+    "desktop/preview/app.js"
+  ]
+}

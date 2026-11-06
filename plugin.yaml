@@ -1,0 +1,12 @@
+name: hermes-crux
+version: "0.1.0"
+description: "Find the assumption that changes a decision: exact affine thresholds, hard-constraint conflicts, and a live visual atlas."
+author: Tony Simons
+license: MIT
+requires_hermes: ">=0.23.0"
+provides_tools:
+  - crux_create
+  - crux_inspect
+  - crux_evaluate
+  - crux_snapshot
+tags: [decisions, planning, desktop, visualization]

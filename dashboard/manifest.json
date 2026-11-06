@@ -1,0 +1,8 @@
+{
+  "name": "hermes-crux",
+  "label": "Crux",
+  "description": "A decision boundary laboratory for Hermes",
+  "version": "0.1.0",
+  "api": "plugin_api.py",
+  "tab": {"hidden": true}
+}

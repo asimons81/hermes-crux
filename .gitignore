@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+node_modules/
+preview-dist/
+desktop/preview/app.js
+test-results/
+playwright-report/
+.DS_Store
