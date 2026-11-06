@@ -18,6 +18,17 @@ The included project-delivery example makes the point in seconds. A solo sprint 
 
 The analysis runs locally. Moving a slider does not call a model or spend API credits.
 
+## Install from GitHub
+
+Requires Hermes **0.23.0+**. Install the public repository:
+
+```sh
+hermes plugins install https://github.com/asimons81/hermes-crux
+hermes plugins enable hermes-crux
+```
+
+For a reproducible installation, append `--ref <full-commit-sha>` to the install command using the commit pinned by the catalog submission. Installing by catalog name becomes available after maintainer review and merge.
+
 ## Install the release archive
 
 Requires Hermes **0.23.0+**. Extract the archive so `plugin.yaml` is at `<your Hermes profile home>/plugins/hermes-crux/plugin.yaml`. For a new installation in the default profile:
@@ -36,7 +47,7 @@ For your own decision, ask Hermes:
 
 Four tools are available: `crux_create`, `crux_inspect`, `crux_evaluate`, and `crux_snapshot`. The [bundled skill](skills/decision-lab/SKILL.md) includes a complete model example. The [API contract](docs/CONTRACT.md) describes the JSON schema and numerical semantics.
 
-This archive works before catalog admission. A public Git installation command and catalog pin can be added after the repository is published. Catalog admission is separate and has not been requested.
+Both Git and local-directory installation work before catalog admission. Catalog listing is subject to maintainer review.
 
 ## Model boundaries
 
